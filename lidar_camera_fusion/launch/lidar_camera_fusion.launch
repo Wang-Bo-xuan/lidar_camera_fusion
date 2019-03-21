@@ -1,0 +1,15 @@
+<launch>
+
+<!--  <rosparam file="$(find lidar_camera_fusion)/config/velodyne16_0122_1.yaml" command="load" />-->
+
+  <node name="lidar_camera_fusion" pkg="lidar_camera_fusion" type="fusion" output="screen">
+    <param name="image_topic" type="string" value="/usb_cam/image_raw" />
+    <param name="lidar_topic" type="string" value="/velodyne_points" />
+    <param name="calibration_filename" type="string" value="" />
+
+    <param name="lidar_out_topic" type="string" value="/color_points" />
+    <param name="image_out_topic" type="string" value="/rect_image" />
+    <param name="publish_frame" type="string" value="/velodyne" />
+  </node>
+
+</launch>
